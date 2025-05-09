@@ -16,17 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        image:
-          - 'coqorg/coq:dev'
-          - 'coqorg/coq:8.19'
-          - 'coqorg/coq:8.18'
+        coq_version:
+          - 'dev'
+          - '8.19'
+          - '8.18'
       fail-fast: false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: coq-community/docker-coq-action@v1
         with:
           opam_file: 'coq-math-classes.opam'
-          custom_image: ${{ matrix.image }}
+          coq_version: ${{ matrix.coq_version }}
           before_install: |
             startGroup "Setup and print opam config"
               opam repo -a --set-default add coq-extra-dev https://coq.inria.fr/opam/extra-dev
