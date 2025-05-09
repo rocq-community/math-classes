@@ -261,7 +261,7 @@ Qed.
 #[global]
 Instance Z_div: DivEuclid Z := Z.div.
 #[global]
-Instance Z_mod: ModEuclid Z := Zmod.
+Instance Z_mod: ModEuclid Z := Z.modulo.
 
 #[global]
 Instance: EuclidSpec Z _ _.
