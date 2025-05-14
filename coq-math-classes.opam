@@ -30,7 +30,7 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.18" & < "8.20~") | (= "dev")}
+  "coq" {(>= "8.18" & < "9.1~") | (= "dev")}
   "coq-bignums" 
 ]
 

@@ -51,11 +51,15 @@ license:
   identifier: MIT
 
 supported_coq_versions:
-  text: Coq 8.18 or later (use releases for other Coq versions)
-  opam: '{(>= "8.18" & < "8.20~") | (= "dev")}'
+  text: Coq/Rocq 8.18 or later (use releases for other Coq/Rocq versions)
+  opam: '{(>= "8.18" & < "9.1~") | (= "dev")}'
+
+tested_rocq_opam_versions:
+- version: dev
+- version: "9.0"
 
 tested_coq_opam_versions:
-- version: dev
+- version: "8.20"
 - version: "8.19"
 - version: "8.18"
 
