@@ -51,7 +51,7 @@ notations.
   - Bas Spitters ([**@spitters**](https://github.com/spitters))
   - Xia Li-yao ([**@Lysxia**](https://github.com/Lysxia))
 - License: [MIT License](LICENSE)
-- Compatible Coq versions: Coq 8.18 or later (use releases for other Coq versions)
+- Compatible Coq versions: Coq/Rocq 8.18 or later (use releases for other Coq/Rocq versions)
 - Additional dependencies:
   - [BigNums](https://github.com/coq/bignums)
 - Coq namespace: `MathClasses`
