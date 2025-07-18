@@ -154,7 +154,7 @@ Section varieties.
        (λ i, eval et (λ sort n, vars sort n i) t) (λ i, eval et (λ sort n, vars sort n i) t0).
      intro.
      apply H2. clear H2. simpl.
-     induction entailment_premises... simpl in *.
+     induction entailment_premises. simpl in *.
      intuition.
      simpl.
      rewrite <- (nqe_always (fst (projT2 a)) vars i).
