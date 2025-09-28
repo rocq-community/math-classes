@@ -21,11 +21,11 @@ Proof. intros []. Qed.
 Instance implementation: AlgebraOps sig carriers := λ o, False_rect _ o.
 
 Global Instance: Algebra sig _.
-Proof. constructor; intuition. Qed.
+Proof. constructor; intuition; auto with *. Qed.
 
 #[global]
 Instance variety: InVariety theory carriers.
-Proof. constructor; intuition. Qed.
+Proof. constructor; intuition; auto with *. Qed.
 
 Definition Object := varieties.Object theory.
 Definition object: Object := varieties.object theory carriers.

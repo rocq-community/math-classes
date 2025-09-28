@@ -30,7 +30,7 @@ Section contents.
   Instance: LeftDistribute max min.
   Proof.
     intros x y z. unfold min, max, sort.
-    repeat case (decide_rel _); simpl; try solve [intuition].
+    repeat case (decide_rel _); simpl; try solve [intuition; auto with *].
      intros. apply (antisymmetry (≤)); [|easy]. now transitivity y; apply le_flip.
     intros. now apply (antisymmetry (≤)).
   Qed.

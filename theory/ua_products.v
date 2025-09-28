@@ -198,9 +198,9 @@ Section categorical.
 
   Global Program Instance: IntroProduct c (product c) := λ H h a X i, h i a X.
 
-  Next Obligation. Proof with intuition.
+  Next Obligation. Proof.
    repeat constructor; try apply _.
-     intros ?? E ?. destruct h. simpl. rewrite E...
+     intros ?? E ?. destruct h. simpl. rewrite E; auto with *.
     intro o.
     pose proof (λ i, @preserves _ _ _ _ _ _ _ _ (proj2_sig (h i)) o) as H0.
     unfold product_ops, algebra_op.
@@ -208,8 +208,8 @@ Section categorical.
     set (o1 := varieties.variety_ops et H o) in *.
     change (∀i : I, Preservation et H (c i) (` (h i)) o1 (o0 i)) in H0.
     clearbody o0 o1. revert o0 o1 H0.
-    induction (et o); simpl...
-   apply (@product_algebra et I c)...
+    induction (et o); simpl; auto with *.
+   apply (@product_algebra et I c); auto with *.
   Qed.
 
   Global Instance: Product c (product c).

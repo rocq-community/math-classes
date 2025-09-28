@@ -38,17 +38,17 @@ Section contents.
   Let lifted_normal := @op_type_equiv (sorts σ) v ve.
 
   Instance lifted_e_proper o: Proper ((=) ==> (=) ==> iff) (lifted_e o).
-  Proof with intuition.
+  Proof.
    induction o; simpl. intuition.
    repeat intro.
    unfold respectful.
    split; intros.
-    assert (x x1 = y x1). apply H0...
-    assert (x0 y1 = y0 y1). apply H1...
-    apply (IHo (x x1) (y x1) H4 (x0 y1) (y0 y1) H5)...
-   assert (x x1 = y x1). apply H0...
-   assert (x0 y1 = y0 y1). apply H1...
-   apply (IHo (x x1) (y x1) H4 (x0 y1) (y0 y1) H5)...
+    assert (x x1 = y x1). apply H0; auto with *.
+    assert (x0 y1 = y0 y1). apply H1; auto with *.
+    apply (IHo (x x1) (y x1) H4 (x0 y1) (y0 y1) H5); auto with *.
+   assert (x x1 = y x1). apply H0; auto with *.
+   assert (x0 y1 = y0 y1). apply H1; auto with *.
+   apply (IHo (x x1) (y x1) H4 (x0 y1) (y0 y1) H5); auto with *.
   Qed. (* todo: clean up *)
 
   (* With that out of the way, we show that there are two equivalent ways of stating compatibility with the
@@ -85,8 +85,8 @@ Section contents.
    clearbody f.
    induction (σ o)...
    simpl in *...
-   apply IHo0...
-   apply H1...
+   apply IHo0; intuition; auto with *.
+   apply H1; auto with *.
   Qed. (* todo: clean up *)
 
   Lemma eSub_eAlgebra: eSub → eAlgebra.
@@ -110,7 +110,7 @@ Section contents.
    simpl in *.
    repeat intro.
    unfold respectful in H0.
-   apply (IHo0 (λ b, f b (if b then x else y)))...
+   apply (IHo0 (λ b, f b (if b then x else y))); auto with *.
   Qed. (* todo: clean up *)
 
   Lemma back_and_forth: iffT eSub eAlgebra.
@@ -231,7 +231,7 @@ Section first_iso.
     exists o1...
    destruct X.
    apply (@op_closed_proper σ B _ _ _ image image_proper _ (o1 z) (o1 (f _ x))).
-    apply H3...
+    apply H3; auto with *.
    apply IHo0 with (o2 x)...
    apply _.
   Qed.

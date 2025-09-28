@@ -116,7 +116,7 @@ Proof.
     rewrite 2!mult_1_r.
     apply (is_ne_0 1).
    unfold dec_recip, Frac_dec_recip.
-   case (decide_rel); simpl; intuition.
+   case (decide_rel); simpl; intuition; auto with *.
   intros [xn xs] Ex.
   unfold dec_recip, Frac_dec_recip.
   simpl. case (decide_rel); simpl.

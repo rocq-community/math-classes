@@ -23,7 +23,7 @@ Section equivlistA_misc.
   Proof.
     split; intros E.
      inversion_clear E; auto. now destruct (proj1 (InA_nil eqA x)).
-    rewrite E. intuition.
+    rewrite E. intuition; auto with *.
   Qed.
 
   Lemma equivlistA_cons_nil x l : ¬equivlistA eqA (x :: l) [].
@@ -81,8 +81,8 @@ Section equivlistA_misc.
   Global Instance: Equivalence PermutationA.
   Proof.
     split.
-      intros l. induction l; intuition.
-     intros l₁ l₂. induction 1; eauto. apply permA_skip; intuition.
+      intros l. induction l; intuition; auto with *.
+     intros l₁ l₂. induction 1; eauto. apply permA_skip; intuition; auto with *.
     intros ???. now apply permA_trans.
   Qed.
 
@@ -92,7 +92,7 @@ Section equivlistA_misc.
 
   Lemma PermutationA_app_head l₁ l₂ k :
     PermutationA l₁ l₂ → PermutationA (k ++ l₁) (k ++ l₂).
-  Proof. intros. induction k. easy. apply permA_skip; intuition. Qed.
+  Proof. intros. induction k. easy. apply permA_skip; intuition; auto with *. Qed.
 
   Global Instance PermutationA_app :
     Proper (PermutationA ==> PermutationA ==> PermutationA) (@app A).
@@ -153,8 +153,8 @@ Section equivlistA_misc.
      intros. now rewrite equivlistA_nil_eq by now symmetry.
     intros l₂ Pl₂ E2.
     destruct (@InA_split _ eqA l₂ x) as [l₂h [y [l₂t [E3 ?]]]].
-     rewrite <-E2. intuition.
-    subst. transitivity (y :: l₁); [intuition |].
+     rewrite <-E2. intuition; auto with *.
+    subst. transitivity (y :: l₁); [intuition; auto with * |].
     apply PermutationA_cons_app, IHPl₁.
      now apply NoDupA_split with y.
     apply equivlistA_NoDupA_split with x y; intuition.

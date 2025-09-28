@@ -59,7 +59,7 @@ Section contents.
   Proof. now destruct p. Qed.
 
   Instance: Reflexive poly_eq.
-  Proof with intuition. repeat intro. induction x... split... Qed.
+  Proof with intuition. repeat intro. induction x; auto with *. split; auto with *. Qed.
 
   Lemma poly_eq_cons :
     ∀ (a b : R) (p q : poly), (a = b /\ poly_eq p q) <-> poly_eq (a :: p) (b :: q).
