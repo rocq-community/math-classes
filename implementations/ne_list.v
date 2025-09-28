@@ -95,10 +95,10 @@ Section contents.
   Definition Permutation (x y: L): Prop := ListPermutation x y.
 
   Global Instance: Equivalence Permutation.
-  Proof with intuition.
+  Proof.
    unfold Permutation.
-   split; repeat intro...
-   transitivity y...
+   split; repeat intro; auto with *.
+   transitivity y; auto with *.
   Qed.
 
   Global Instance: Proper (Permutation ==> ListPermutation) to_list.

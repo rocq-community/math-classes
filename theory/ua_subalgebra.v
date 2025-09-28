@@ -16,12 +16,12 @@ Section subalgebras.
     end.
 
   Global Instance op_closed_proper: ∀ `{∀ s, Proper ((=) ==> iff) (P s)} o, Proper ((=) ==> iff) (@op_closed o).
-  Proof with intuition.
+  Proof.
    induction o; simpl; intros x y E.
-    rewrite E...
+    rewrite E; auto with *.
    split; intros.
-    apply (IHo (x z))... apply E...
-   apply (IHo _ (y z))... apply E...
+    apply (IHo (x z)); auto with *. apply E; auto with *.
+   apply (IHo _ (y z)); auto with *. apply E; auto with *.
   Qed.
 
   Class ClosedSubset: Prop :=

@@ -156,9 +156,9 @@ Section contents.
      do 2 rewrite eval_is_close.
      do 2 rewrite <- subst_eval.
      apply Q. clear Q.
-     induction entailment_premises; simpl...
+     induction entailment_premises; simpl; auto with *.
      do 2 rewrite subst_eval.
-     do 2 rewrite <- eval_is_close...
+     do 2 rewrite <- eval_is_close; auto with *.
     Qed.
 
     Instance: ∀ a, Setoid_Morphism (@eval_in_other (ne_list.one a)).

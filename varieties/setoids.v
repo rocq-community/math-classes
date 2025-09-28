@@ -21,10 +21,10 @@ Section from_instance.
   Instance: AlgebraOps sig carriers := λ o, False_rect _ o.
 
   Instance: Algebra sig carriers.
-  Proof. constructor; intuition. Qed.
+  Proof. constructor; intuition; auto with *. Qed.
 
   Instance: InVariety theory carriers.
-  Proof. constructor; intuition. Qed.
+  Proof. constructor; intuition; auto with *. Qed.
 
   Definition object: varieties.Object theory := varieties.object theory (λ _, A).
 
