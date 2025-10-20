@@ -75,7 +75,7 @@ Proof. constructor; try apply _. intros x y. auto. Qed.
 
 #[global]
 Instance: SemiRing_Morphism to_Q.
-Proof. repeat (constructor; try apply _); intros; qify; reflexivity. Qed.
+Proof. repeat (constructor; try apply _); intros; qify; autorewrite with qsimpl; reflexivity. Qed.
 
 #[global]
 Instance inject_Q_QType: Cast Q t := of_Q.
