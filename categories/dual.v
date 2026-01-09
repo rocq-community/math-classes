@@ -40,7 +40,7 @@ End contents.
    a few changes to the scripts to explicitly convert terms to applications
    of flipA. *)
 #[global]
-Hint Cut [_* e (_*) e] : typeclass_instances.
+Hint Cut [_* e (_* ) e] : typeclass_instances.
 
 Section functors.
 
