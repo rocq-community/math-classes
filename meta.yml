@@ -52,10 +52,12 @@ license:
 
 supported_coq_versions:
   text: Coq/Rocq 8.18 or later (use releases for other Coq/Rocq versions)
-  opam: '{(>= "8.18" & < "9.1~") | (= "dev")}'
+  opam: '{(>= "8.18" & < "9.3~") | (= "dev")}'
 
 tested_rocq_opam_versions:
 - version: dev
+- version: "9.2"
+- version: "9.1"
 - version: "9.0"
 
 tested_coq_opam_versions:
