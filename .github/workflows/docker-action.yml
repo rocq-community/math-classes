@@ -21,6 +21,8 @@ jobs:
           - 'coqorg/coq:8.19'
           - 'coqorg/coq:8.18'
           - 'rocq/rocq-prover:dev'
+          - 'rocq/rocq-prover:9.2'
+          - 'rocq/rocq-prover:9.1'
           - 'rocq/rocq-prover:9.0'
       fail-fast: false
     steps:
