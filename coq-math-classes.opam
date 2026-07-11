@@ -30,8 +30,9 @@ build: [
 ]
 install: [make "install"]
 depends: [
-  "coq" {(>= "8.18" & < "9.3~") | (= "dev")}
-  "coq-bignums" 
+  ("coq" {>= "8.18" & < "8.21~"}
+  | "rocq-core" {(>= "9.0" & < "9.3~") | (= "dev")})
+  "coq-bignums"
 ]
 
 tags: [

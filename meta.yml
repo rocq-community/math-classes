@@ -51,8 +51,11 @@ license:
   identifier: MIT
 
 supported_coq_versions:
-  text: Coq/Rocq 8.18 or later (use releases for other Coq/Rocq versions)
-  opam: '{(>= "8.18" & < "9.3~") | (= "dev")}'
+  text: Coq 8.18 to 8.20 or Rocq 9.0 to 9.2 (use releases for other Coq/Rocq versions)
+  # The coq-core/rocq-core split (Rocq 9.2 drops the `coq` compatibility
+  # package) means the compiler dependency must be hand-written as a
+  # disjunction in coq-math-classes.opam; this field is kept for reference.
+  opam: '{>= "8.18" & < "8.21~"} | "rocq-core" {(>= "9.0" & < "9.3~") | (= "dev")}'
 
 tested_rocq_opam_versions:
 - version: dev
