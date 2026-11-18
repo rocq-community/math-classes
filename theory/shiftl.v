@@ -35,7 +35,7 @@ Lemma shiftl_nat_pow `{!NaturalsToSemiRing B} `{!Naturals B} `{!NatPowSpec A B n
   x ≪ n = x * 2 ^ n.
 Proof. change (x ≪ id n = x * 2 ^ n). apply shiftl_nat_pow_alt. Qed.
 
-Lemma shiftl_1 x : x ≪ (1:B) = 2 * x.
+Lemma shiftl_1 x : x ≪ (1:>B) = 2 * x.
 Proof. now rewrite <-(rings.plus_0_r 1), shiftl_S, shiftl_0. Qed.
 
 Lemma shiftl_2 x : x ≪ (2:B) = 4 * x.

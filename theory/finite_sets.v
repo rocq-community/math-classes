@@ -165,7 +165,7 @@ Section full_fset_props.
 
   Instance: Setoid A := fset_car_setoid A.
 
-  Notation to_listset := (fset_map id : set_type A → @set_type _ (listset A)).
+  Notation to_listset := (fset_map id :> set_type A → @set_type _ (listset A)).
   Notation from_listset := (to_listset⁻¹).
 
   Lemma to_listset_preserves_in x X : x ∈ to_listset X ↔ x ∈ X.
