@@ -91,7 +91,7 @@ Proof.
   unfold cast at 1. simpl.
   rewrite bigQ_div_bigQq_alt.
   rewrite rings.preserves_mult, dec_fields.preserves_dec_recip.
-  case (decide_rel (=) ('d : bigZ) 0); intros Ed.
+  case (decide_rel (=) ('d :> bigZ) 0); intros Ed.
    rewrite Ed. rewrite !rings.preserves_0. rewrite dec_recip_0.
    now rewrite rings.mult_0_r.
   rewrite 2!(integers.to_ring_twice _ _ (cast bigZ (Frac bigZ))).
